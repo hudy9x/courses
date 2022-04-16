@@ -1,10 +1,8 @@
 import { useState, createContext, useContext } from "react";
-
 const UserContext = createContext();
 
-function UseContextDemo() {
+function Component1() {
   const [user, setUser] = useState("Jesse Hall");
-
   return (
     <UserContext.Provider
       value={{
@@ -14,7 +12,7 @@ function UseContextDemo() {
     >
       <div className="container-md box">
         <h3>{`Hello ${user}!`}</h3>
-        <Component2 user={user} />
+        <Component2 />
       </div>
     </UserContext.Provider>
   );
@@ -31,7 +29,6 @@ function Component2() {
 
 function Component3() {
   const { user, setUser } = useContext(UserContext);
-
   return (
     <div className="box">
       <p>Component 3</p>
@@ -48,4 +45,4 @@ function Component3() {
   );
 }
 
-export default UseContextDemo;
+export default Component1;

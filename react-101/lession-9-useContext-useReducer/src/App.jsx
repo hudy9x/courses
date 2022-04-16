@@ -6,8 +6,8 @@ import ContextAndReducerDemo from "../components/ContextAndReducerDemo";
 function App() {
   return (
     <>
-      <UseStateProblem />
-      {/* <UseContextDemo /> */}
+      {/* <UseStateProblem /> */}
+      <UseContextDemo />
       {/* <UseReducerDemo /> */}
       {/* <ContextAndReducerDemo /> */}
     </>
