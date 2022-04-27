@@ -1,43 +1,15 @@
 import { useReducer } from "react";
-
-const initialTodos = [
-  {
-    id: 1,
-    title: "Todo 1",
-    complete: false,
-  },
-  {
-    id: 2,
-    title: "Todo 2",
-    complete: false,
-  },
-];
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "COMPLETE":
-      return state.map((todo) => {
-        if (todo.id === action.id) {
-          return { ...todo, complete: !todo.complete };
-        } else {
-          return todo;
-        }
-      });
-    default:
-      return state;
-  }
-};
+import { initialState, reducer } from "../store";
 
 function Todos() {
-  const [todos, dispatch] = useReducer(reducer, initialTodos);
-
+  const [state, dispatch] = useReducer(reducer, initialState);
   const handleComplete = (todo) => {
     dispatch({ type: "COMPLETE", id: todo.id });
   };
 
   return (
     <div className="container-md box">
-      {todos.map((todo) => (
+      {state.map((todo) => (
         <div className="todo" key={todo.id}>
           <input
             type="checkbox"

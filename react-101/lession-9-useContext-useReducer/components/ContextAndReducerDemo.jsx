@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { StoreContext, StoreProvider } from "../store";
+import { StoreContext, StoreProvider } from "../store/index";
 
 export default function ContextAndReducerDemo() {
   return (

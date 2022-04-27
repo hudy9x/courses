@@ -1,4 +1,4 @@
-export const initialTodos = [
+export const initialState = [
   {
     id: 1,
     title: "Todo 1",
