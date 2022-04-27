@@ -21,6 +21,17 @@ export const reducer = (state, action) => {
           return todo;
         }
       });
+
+    case "ADD":
+      return [
+        ...state,
+        {
+          id: new Date().getTime(),
+          title: "new todo",
+          complete: false,
+        },
+      ];
+
     default:
       return state;
   }
