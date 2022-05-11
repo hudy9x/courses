@@ -1,22 +1,14 @@
-import { Link, Outlet  } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { getInvoices } from "../data";
 
 export default function Invoices() {
   const invoices = getInvoices();
-
   return (
-    <main style={{ padding: "1rem 0", display: 'flex' }}>
-      {/* <h2>Invoices List</h2> */}
-      <nav
-        style={{
-          borderRight: "solid 1px",
-          borderColor: "white",
-          padding: "1rem",
-        }}
-      >
+    <div className="invoices">
+      <nav>
         {invoices.map((invoice) => (
           <Link
-            style={{ display: "block", margin: "1rem 0" }}
+            className="invoice-item"
             to={`/invoices/${invoice.number}`}
             key={invoice.number}
           >
@@ -24,7 +16,7 @@ export default function Invoices() {
           </Link>
         ))}
       </nav>
-      <Outlet />
-    </main>
+      <Outlet/>
+    </div>
   );
 }
